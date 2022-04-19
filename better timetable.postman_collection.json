@@ -1,0 +1,1010 @@
+{
+	"info": {
+		"_postman_id": "5a481664-4281-4823-8d73-41040063f78d",
+		"name": "better timetable",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "admin login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@school.com\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add staff",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"email\": \"mahima@biswas.com\", \r\n    \"name\": \"Mahima\", \r\n    \"role\": 0, \r\n    \"noticePermission\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/staff/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"staff",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"mahimabiswas28@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "staff login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"mahimabiswas28@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get staff details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"random@gmail.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/staff/details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"staff",
+						"details"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "random@gmail.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update staff",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"id\":\"624fd001686105837f47ba87\",\r\n    \"email\": \"random@gmail.com\", \r\n    \"name\": \"random\", \r\n    \"role\": 2, \r\n    \"noticePermission\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/staff/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"staff",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add batch",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"shortName\":\"sem1\",\r\n    \"longName\":\"semester1\",\r\n    \"programId\":1,\r\n    \"divisions\":\"A,B,C\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/batch/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"batch",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verify email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/auth/verifyEmail/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1haGltYWJpc3dhczI4QGdtYWlsLmNvbSIsImlhdCI6MTY0OTQwOTE5M30.8Vq5VXTMD5H8yeU3MGSMEYOePTJdRokx9gDTEz6DYBo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"verifyEmail",
+						"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1haGltYWJpc3dhczI4QGdtYWlsLmNvbSIsImlhdCI6MTY0OTQwOTE5M30.8Vq5VXTMD5H8yeU3MGSMEYOePTJdRokx9gDTEz6DYBo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get batch",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "update batch",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"624ffb611ca8e667cc3ac6f2\",\r\n    \"shortName\":\"sem2\",\r\n    \"longName\":\"semester2\",\r\n    \"programId\":\"624ff9304abaa51ece922f99\",\r\n    \"divisions\":[\"A\",\"B\",\"C\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/batch/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"batch",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete batch",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"625008a54b30c33ac7d53951\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/batch/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"batch",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add program",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"shortName\":\"MCA\",\r\n    \"longName\":\"Masters in Computer Applications\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/program/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"program",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get program",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/program/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"program",
+						"get"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get program by id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "update program",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"62500b6c4b30c33ac7d53954\",\r\n    \"shortName\":\"MCA\",\r\n    \"longName\":\"Masters in Computer Applications\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/program/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"program",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete program",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"62500cd58112e847b2cc9a73\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/program/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"program",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update subject",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"62501ad33167fe248d0d6ec1\",\r\n    \"shortName\":\"IJEE\",\r\n    \"longName\":\"Introduction to Java Enterprise Edition\",\r\n    \"type\":0,\r\n    \"programId\":\"624d7c70b4a48233e378404d\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/subject/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"subject",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add subject",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"shortName\":\"IJE\",\r\n    \"longName\":\"Introduction to Java Enterprise\",\r\n    \"type\":0,\r\n    \"programId\":\"624d7c70b4a48233e378404d\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/subject/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"subject",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get subject",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"programId\":\"624d7c70b4a48233e378404d\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/subject/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"subject",
+						"get"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete subject",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"62501ad33167fe248d0d6ec1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/subject/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"subject",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add lec",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"staffId\":\"624ffc511ca8e667cc3ac6f5\",\r\n     \"subjectId\":\"62501d8ebbc0ae750b81fd6b\",\r\n        \"division\":\"C\",\r\n        \"day\":\"2\",\r\n        \"date\":\"\",\r\n        \"time\":{\r\n            \"to\":\"1300\",\r\n            \"from\" :\"1500\"\r\n        },\r\n        \"batchId\":\"6250104fcfc713d034295728\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/lecture/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"lecture",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update lecture",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"62501fd44bf5e6b1bda924e9\",\r\n    \"staffId\":\"624ffc511ca8e667cc3ac6f5\",\r\n     \"subjectId\":\"62501d8ebbc0ae750b81fd6b\",\r\n        \"division\":\"C\",\r\n        \"day\":\"wed\",\r\n        \"date\":\"\",\r\n        \"time\":{\r\n            \"to\":\"1800\",\r\n            \"from\" :\"1930\"\r\n        },\r\n        \"batchId\":\"6250104fcfc713d034295728\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/lecture/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"lecture",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete lecture",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"62504b7ef8cf6d730a2ba5d3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/lecture/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"lecture",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add notice",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"body\":\"ios class rescheduled tp 6.00pm\",\r\n    \"date\":120822544534656\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/notice/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"notice",
+						"add"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete notice",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"62504e8d997b6ad63a518c25\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/notice/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"notice",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get notice",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/notice/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"notice",
+						"get"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get lecture",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"batchId\":\"6250104fcfc713d034295728\",\r\n    \"division\":\"C\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/lecture/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"lecture",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get division",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Id\":\"624ffb611ca8e667cc3ac6f2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/batch/division",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"batch",
+						"division"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get electives",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjAsInJvbGUiOjAsImVtYWlsIjoiYWRtaW5Ac2Nob29sLmNvbSIsImlhdCI6MTY0OTM5NDIyMX0.k8Ij5P1raU_1xsVW4ZAdw_emLad8HstPe7-WfQN9p7E",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"batchId\":\"624d7c70b4a48233e378404d\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/subject/getElectives",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"subject",
+						"getElectives"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get batch details",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
